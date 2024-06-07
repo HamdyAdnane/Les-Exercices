@@ -148,5 +148,7 @@ class Program
         Adnane.AleatoireNumbres();
         // Partie 11 Exercice 1
         Console.WriteLine(Adnane.Somme(nombre1,nombre2,nombre3,nombre4,nombre5));
+        // Partie 11 Exercice 6
+        Adnane.Remplir_user_And_Tri_Tab();
     }
 }
