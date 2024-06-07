@@ -19,7 +19,7 @@ class Program
         Console.WriteLine("Entrer le cinquième Valeur");
         nombre5 = Convert.ToInt32(Console.ReadLine());
         var maClasse = new Adnane();
-        // Partie 1 Exercice 6
+        // Partie 1 Exercice 6 Et Partie 11 Exercie 8
         Adnane.DoubleChanger(nombre1, nombre2);
         // Partie 1 Exercice 7
         Console.WriteLine(Adnane.TripleValeur(nombre1, nombre2, nombre3));
@@ -148,7 +148,20 @@ class Program
         Adnane.AleatoireNumbres();
         // Partie 11 Exercice 1
         Console.WriteLine(Adnane.Somme(nombre1,nombre2,nombre3,nombre4,nombre5));
-        // Partie 11 Exercice 6
-        Adnane.Remplir_user_And_Tri_Tab();
+        // Partie 11 Exercice 6 Et Exercice 7
+        int[] Tableau;
+        int Nombre_elements;
+        Console.WriteLine("Entrer Le Nombre Des élements Que Tu as Entrée :");
+        Nombre_elements = Convert.ToInt32(Console.ReadLine());
+        Tableau = new int[Nombre_elements];
+        for (int i = 0; i <= Nombre_elements - 1; i++)
+        {
+            Console.WriteLine("Entrez l'élement n° " + (i + 1));
+            Tableau[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Adnane.TriTableau(Tableau, Nombre_elements);
+        bool situation = Adnane.TableauCroissant(Tableau, Nombre_elements);
+        Console.WriteLine("La Croissant De Ces élemnts est " + situation);
     }
 }
