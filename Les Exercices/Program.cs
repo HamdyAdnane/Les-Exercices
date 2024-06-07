@@ -1,0 +1,150 @@
+﻿using System;
+using AdnaneTools;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int age, nombre1, nombre2, nombre3, nombre4, nombre5;
+        string Nom1, Nom2, Nom3, sexe;
+        int heures, minutes, seconds;
+        /**/
+        Console.WriteLine("Entrer la premier Valeur");
+        nombre1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Entrer le deuxième Valeur");
+        nombre2 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Entrer le troisième Valeur");
+        nombre3 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Entrer le quatrième Valeur");
+        nombre4 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Entrer le cinquième Valeur");
+        nombre5 = Convert.ToInt32(Console.ReadLine());
+        var maClasse = new Adnane();
+        // Partie 1 Exercice 6
+        Adnane.DoubleChanger(nombre1, nombre2);
+        // Partie 1 Exercice 7
+        Console.WriteLine(Adnane.TripleValeur(nombre1, nombre2, nombre3));
+        // Partie 2 Exercice 2
+        Adnane.Carré(nombre1);
+        // Partie 2 Exercice 3
+        Adnane.Hello();
+        // Partie 2 Exercice 4
+        Adnane.TTC();
+        // Partie 3 Exercice 1 et Exercice 4
+        Adnane.Signe(nombre1);
+        // Partie 3 Exercice 2 et Exercice 5
+        Adnane.Signe_Produit(nombre1, nombre2);
+        // Partie 3 Exercice 3
+        Console.WriteLine("Entrez successivement trois noms : ");
+        Nom1 = Console.ReadLine();
+        Nom2 = Console.ReadLine();
+        Nom3 = Console.ReadLine();
+        if (Adnane.inf(Nom1, Nom2) && Adnane.inf(Nom2, Nom3))
+            Console.WriteLine("Ces noms sont classés alphabétiquement");
+        else
+            Console.WriteLine("Ces noms ne sont pas classés");
+
+        // Partie 3 Exercice 6
+        Console.WriteLine("Entrez l’âge de votre l’enfant : ");
+        age = Convert.ToInt32(Console.ReadLine());
+        Adnane.catégorie(age);
+
+        // Partie 4 Exercice 2 et Exercice 3
+        Console.WriteLine("Entrez les heures, puis les minutes, puis les secondes : ");
+        heures = Convert.ToInt32(Console.ReadLine());
+        minutes = Convert.ToInt32(Console.ReadLine());
+        seconds = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine(Adnane.temps(heures, minutes, seconds));
+        // Partie 4 Exercice 4
+        Console.WriteLine(Adnane.facture());
+        // Partie 4 Exercice 5
+        Console.WriteLine("Entrez Votre sexe (M/F) : ");
+        sexe = Console.ReadLine();
+        Console.WriteLine("Entrez Votre Age: ");
+        age = Convert.ToInt32(Console.ReadLine());
+        Adnane.Zorglub(age, sexe);
+        // Partie 4 Exercice 6
+        Adnane.Ballotage();
+        // Partie 4 Exercice 7
+        Console.WriteLine(Adnane.Situation(age));
+        // Partie 4 Exercice 8
+        Adnane.Date();
+        // Partie 5 Exercice 1
+        Adnane.NombreBetween();
+        // Partie 5 Exercice 2
+        Adnane.ValeurBetween();
+        // Partie 5 Exercice 3
+        Adnane.DixNombresSuivantes();
+        // Partie 5 Exercice 4
+        Adnane.DixNombreSuivante();
+        // Partie 5 Exercice 5
+        Adnane.TableMultiplication();
+        // Partie 5 Exercice 6
+        Adnane.SommeSuivi();
+        // Partie 5 Exercice 7
+        Adnane.Factorielle();
+        // Partie 5 Exercice 8 et 9
+        Adnane.PlusGrandValeur();
+        // Partie 5 Exercice 10
+        Adnane.PrixAchats();
+        // Partie 5 Exercice 11
+        Adnane.Tierce();
+        // Partie 6 Exercice 1
+        Adnane.RemplissageTableau0();
+        // Partie 6 Exercice 2
+        Adnane.RemplissageTableauVoyelles();
+        // Partie 6 Exercice 3
+        Adnane.RemplissageNotes();
+        // Partie 6 Exercice 4
+        Adnane.RemplissageTableaux();
+        // Partie 6 Exercice 5
+        Adnane.RemplirTableauImpair();
+        // Partie 6 Exercice 6
+        Adnane.TableauSuites();
+        // Partie 6 Exercice 7
+        Adnane.Moyenne();
+        // Partie 6 Exercice 8
+        Adnane.Signes_Nombres();
+        // Partie 6 Exercice 9
+        Adnane.SommeTableau();
+        // Partie 6 Exercice 10
+        Adnane.Somme_Entre_Deux_Tab();
+        // Partie 6 Exercice 11
+        Adnane.Produit_Entre_Deux_Tab();
+        // Partie 6 Exercice 12
+        Adnane.Augemente();
+        // Partie 6 Exercice 13
+        Adnane.Recherche();
+        // Partie 6 Exercice 14
+        Adnane.Notes_Classe();
+        // Partie 7 Exercice 1
+        Adnane.Consécutifs();
+        // Partie 7 Exercice 2
+        Adnane.TriParInsertion();
+        // Partie 7 Exercice 3
+        Adnane.Inverse_Ordre();
+        // Partie 7 Exercice 4
+        Adnane.Supprimer_Valeur();
+        // Partie 8 Exercice 1
+        Adnane.Remplissant_Par_0();
+        // Partie 8 Exercice 6
+        Adnane.PlusGrandValeurMulti();
+        // Partie 9 Exercice 2
+        string Mot;
+        Console.WriteLine("Entrer un mot , Stp!");
+        Mot = Console.ReadLine();
+        Adnane.Nombre_Caractere(Mot);
+        // Partie 9 Exercice 3 Et Exercice 4 Et Exercice 5
+        Console.WriteLine("Entrez une phrase : ");
+        string Phrase = Console.ReadLine();
+        Console.WriteLine(Adnane.Nombre_Mots(Phrase));
+        Console.WriteLine(Adnane.Nombres_Voyelles(Phrase));
+        Console.WriteLine(Adnane.Supprimer_Caractere(Phrase));
+        // Partie 9 Exercice 10
+        int number;
+        Console.WriteLine("Entrez votre nombre : ");
+        number = Convert.ToInt32(Console.ReadLine());
+        Adnane.Pair(number);
+        // Partie 9 Exercice 11
+        Adnane.AleatoireNumbres();
+    }
+}
