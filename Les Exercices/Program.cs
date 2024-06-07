@@ -146,5 +146,7 @@ class Program
         Adnane.Pair(number);
         // Partie 9 Exercice 11
         Adnane.AleatoireNumbres();
+        // Partie 11 Exercice 1
+        Console.WriteLine(Adnane.Somme(nombre1,nombre2,nombre3,nombre4,nombre5));
     }
 }

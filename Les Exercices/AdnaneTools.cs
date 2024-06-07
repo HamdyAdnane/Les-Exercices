@@ -941,5 +941,9 @@ namespace AdnaneTools
             int Glup6 = Nombre.Next(1, 7) + Nombre.Next(1, 7);
             Console.WriteLine(Glup6);
         }
+        public static int Somme(int a, int b, int c, int d, int e)
+        {
+            return a + b + c + d + e;
+        }
     }
 }
