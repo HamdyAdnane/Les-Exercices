@@ -148,6 +148,8 @@ class Program
         Adnane.AleatoireNumbres();
         // Partie 11 Exercice 1
         Console.WriteLine(Adnane.Somme(nombre1,nombre2,nombre3,nombre4,nombre5));
+        // Partie 11 Exercice 3
+        Console.WriteLine(Adnane.Trouve("je m'appel adnane hamdy", "y"));
         // Partie 11 Exercice 6 Et Exercice 7 Et Exercice 9
         int[] Tableau;
         int Nombre_elements;

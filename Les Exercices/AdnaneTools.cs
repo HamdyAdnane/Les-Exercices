@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Channels;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace AdnaneTools
 {
     public class Adnane
@@ -1010,6 +1006,19 @@ namespace AdnaneTools
             {
                 Console.WriteLine(Tableau[i]);
             }
+        }
+        public static int Trouve(string Phrase, string Caractere2)
+        {
+            int i = 1;
+            while (i < Phrase.Length - Caractere2.Length && Caractere2 != Phrase.Substring(i, Caractere2.Length))
+            {
+                i++;
+            }
+            if (Caractere2 != Phrase.Substring(i, Caractere2.Length))
+            {
+                return 0;
+            }
+            return i;
         }
     }    
 }
