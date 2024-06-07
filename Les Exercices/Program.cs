@@ -148,7 +148,7 @@ class Program
         Adnane.AleatoireNumbres();
         // Partie 11 Exercice 1
         Console.WriteLine(Adnane.Somme(nombre1,nombre2,nombre3,nombre4,nombre5));
-        // Partie 11 Exercice 6 Et Exercice 7
+        // Partie 11 Exercice 6 Et Exercice 7 Et Exercice 9
         int[] Tableau;
         int Nombre_elements;
         Console.WriteLine("Entrer Le Nombre Des élements Que Tu as Entrée :");
@@ -159,9 +159,14 @@ class Program
             Console.WriteLine("Entrez l'élement n° " + (i + 1));
             Tableau[i] = Convert.ToInt32(Console.ReadLine());
         }
-
         Adnane.TriTableau(Tableau, Nombre_elements);
         bool situation = Adnane.TableauCroissant(Tableau, Nombre_elements);
         Console.WriteLine("La Croissant De Ces élemnts est " + situation);
+        bool Choix = true;
+        Console.WriteLine("Le tri est effectué automatiquement Croissante si vous souhaitez modifier de tri en Decroissante Entrée zero '0', Sinon Entrée un '1'.");
+        int Number_Choix = Convert.ToInt32(Console.ReadLine());
+        if (Number_Choix == 0)
+            Choix = false;
+        Adnane.TriTableaux(Tableau, Nombre_elements, Choix);
     }
 }

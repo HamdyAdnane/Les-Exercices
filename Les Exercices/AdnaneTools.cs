@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Channels;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace AdnaneTools
 {
     public class Adnane
@@ -976,6 +977,39 @@ namespace AdnaneTools
                 i++;
             }
             return Flag;
+        }
+        public static void TriTableaux(int[] Tableau, int taille_Tableau, bool Choix)
+        {
+            int changer, Position;
+            for (int i = 0; i < taille_Tableau - 1; i++)
+            {
+                Position = i;
+                for (int j = i + 1; j < taille_Tableau; j++)
+                {
+                    if (Choix)
+                    {
+                        if (Tableau[j] < Tableau[Position])
+                        {
+                            Position = j;
+                        }
+                    }
+                    else
+                    {
+                        if (Tableau[j] > Tableau[Position])
+                        {
+                            Position = j;
+                        }
+                    }
+                }
+                changer = Tableau[Position];
+                Tableau[Position] = Tableau[i];
+                Tableau[i] = changer;
+            }
+            Console.WriteLine("le tri de tableau est suivante :");
+            for (int i = 0; i < taille_Tableau; i++)
+            {
+                Console.WriteLine(Tableau[i]);
+            }
         }
     }    
 }
