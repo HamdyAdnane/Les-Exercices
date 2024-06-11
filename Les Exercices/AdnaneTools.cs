@@ -730,7 +730,7 @@ namespace AdnaneTools
         }
         public static void TriParInsertion()
         {
-            int Nombre, PositionMaxi, Changer;
+            int Nombre, PositionMaxi;
             int[] Tableau;
             Console.WriteLine("Entrez le nombre de valeurs :");
             Nombre = Convert.ToInt32(Console.ReadLine());

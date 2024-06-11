@@ -18,7 +18,7 @@ class Program
         nombre4 = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Entrer le cinquième Valeur");
         nombre5 = Convert.ToInt32(Console.ReadLine());
-        var maClasse = new Adnane();
+        var Sadnane = new Adnane();
         // Partie 1 Exercice 6 Et Partie 11 Exercie 8
         Adnane.DoubleChanger(nombre1, nombre2);
         // Partie 1 Exercice 7
@@ -170,5 +170,113 @@ class Program
         if (Number_Choix == 0)
             Choix = false;
         Adnane.TriTableaux(Tableau, Nombre_elements, Choix);
+        // Partie 11 Exercice 10 Sodoku
+        int[,] Sudok = new int[,]
+                    {
+                {5, 3, 0, 0, 7, 0, 0, 0, 0},
+                {6, 0, 0, 1, 9, 5, 0, 0, 0},
+                {0, 9, 8, 0, 0, 0, 0, 6, 0},
+                {8, 0, 0, 0, 6, 0, 0, 0, 3},
+                {4, 0, 0, 8, 0, 3, 0, 0, 1},
+                {7, 0, 0, 0, 2, 0, 0, 0, 6},
+                {0, 6, 0, 0, 0, 0, 2, 8, 0},
+                {0, 0, 0, 4, 1, 9, 0, 0, 5},
+                {0, 0, 0, 0, 8, 0, 0, 7, 9}
+                    }; ;
+        RemplitGrille(Sudok);
+        while (!VerifLignes(Sudok) || !VerifColonnes(Sudok) || !VerifSousGrilles(Sudok))
+        {
+            PrintSudoku(Sudok);
+        }
+    }
+    public static bool TousDifferentes(int[] Tableau_vérification)
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = i + 1; j < 9; j++)
+            {
+                if (Tableau_vérification[i] == Tableau_vérification[j])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public static void RemplitGrille(int[,] Tableau_Tous_Cases)
+    {
+        Random rnd = new Random();
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                Tableau_Tous_Cases[i, j] = rnd.Next(1, 10);
+            }
+        }
+    }
+    public static bool VerifLignes(int[,] Grille)
+    {
+        int[] Ligne = new int[9];
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                Ligne[j] = Grille[i, j];
+            }
+            if (!TousDifferentes(Ligne))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static bool VerifColonnes(int[,] Grille)
+    {
+        int[] Colonne = new int[9];
+        for (int j = 0; j < 9; j++)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                Colonne[i] = Grille[i, j];
+            }
+            if (!TousDifferentes(Colonne))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static bool VerifSousGrilles(int[,] Grille)
+    {
+        int[] SousGrille = new int[9];
+        for (int i = 0; i < 7; i = i + 3)
+        {
+            for (int j = 0; j < 7; j = j + 3)
+            {
+                for (int ii = 0; ii < 3; ii++)
+                {
+                    for (int jj = 0; jj < 3; jj++)
+                    {
+                        SousGrille[ii * 3 + jj] = Grille[i + ii, j + jj];
+                    }
+                }
+                if (!TousDifferentes(SousGrille))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    static void PrintSudoku(int[,] board)
+    {
+        for (int row = 0; row < 9; row++)
+        {
+            for (int col = 0; col < 9; col++)
+            {
+                Console.Write(board[row, col] + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }
